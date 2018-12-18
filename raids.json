@@ -1342,4 +1342,12 @@
 	"image": "/assets/raids/BattleRaid_Huanglong_and_Qilin_Impossible.png",
 	"category": "Unite and Fight",
 	"element": "Light"
+}
+{
+	"english": "Lvl 150 Tiamat Malice",
+	"japanese": "Lv150 ティアマト・マリス",
+	"room": "lvl150tiamat",
+	"image": "/assets/raids/BattleRaid_Tiamat_Malich.png",
+	"category": "Impossible Tier 3",
+	"element": "Wind"
 }]
