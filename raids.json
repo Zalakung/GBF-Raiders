@@ -1182,4 +1182,12 @@
 	"image": "/assets/raids/BattleRaid_Tiamat_Malich.png",
 	"category": "Impossible Tier 3",
 	"element": "Wind"
+},
+{
+	"english": "Lvl 200 Akasha",
+	"japanese": "Lv200 アーカーシャ",
+	"room": "lvl200akasha",
+	"image": "/assets/raids/BattleRaid_Akasha.png",
+	"category": "Impossible Tier 3",
+	"element": "Light"
 }]
