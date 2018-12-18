@@ -1,4 +1,4 @@
-const version = '0.0.16';
+const version = '0.0.12';
 let precachename = 'gbfraiders-precache-' + version;
 let dynamicname = 'gbfraiders-dynamic-' + version;
 let precachedResourcesAsDependency = [
@@ -39,7 +39,7 @@ self.addEventListener( 'install', function ( event ) {
 self.addEventListener( 'fetch', function ( event ) {
 	let request = event.request.clone();
 	let requestURL = new URL( event.request.url );
-	console.log( `Service Worker - fetching request: ${requestURL.href}`, requestURL );
+	console.log( "Service Worker - fetching request: " + requestURL.href, requestURL );
 	if ( requestURL.pathname == "/socket.io/" ) {
 		event.respondWith(
 			NetworkOnly( request )
@@ -62,30 +62,31 @@ self.addEventListener( 'fetch', function ( event ) {
 } );
 
 function CacheOnly( request ) {
-	console.log( `${request.href}: Checking only cache for response`, request );
+	console.log( "Checking only cache for response..." );
 	return caches.match( request )
 		.then( function ( cacheResponse ) {
-			console.log( `Found response in cache`, cacheResponse );
+			console.log( "Found response in cache." );
 			return cacheResponse;
 		} );
 }
 
 function NetworkOnly( request ) {
-	console.log( `${request.href}: Getting response straight from network`, request );
+	console.log( "Getting response straight from network..." );
 	return fetch( request, { cache: 'no-store' } );
 }
 
 function NetworkFallingBackToCache( request ) {
-	console.log( `${request.href}: Getting reponse from network with cache fallback`, request );
+	console.log( "Getting reponse from network with cache fallback..." );
 	return fetch( request, { cache: 'no-store' } )
 		.catch( function ( error ) {
-			console.error( `Failed to get response from network, checking cache for fallback`, error );
+			console.log( `Failed to get response from network: ${error}` );
+			console.log( "Checking cache for fallback..." );
 			return caches.match( request );
 		} );
 }
 
 function CacheFallingBackToNetwork( request ) {
-	console.log( `${request.href}: Getting reponse from cache with network fallback`, request );
+	console.log( "Getting reponse from cache with network fallback..." );
 	return caches.match( request )
 		.then( function ( cacheResponse ) {
 			return cacheResponse || fetch( request, { cache: 'no-store' } )
@@ -100,7 +101,7 @@ function CacheFallingBackToNetwork( request ) {
 						} );
 				} )
 				.catch( function ( err ) {
-					console.error( `Failed to get response from network or cache`, err );
+					console.log( `Error fetching from ServiceWorker: ${err}` );
 				} );
 		} );
 }

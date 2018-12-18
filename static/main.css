@@ -7,7 +7,7 @@
 	flex-direction: column;
 }
 
-.donate>a {
+#donate-btn>a {
 	color: #FFF !important;
 }
 
@@ -19,28 +19,6 @@
 #filter-dropdown>label {
 	font-weight: bold;
 	margin-right: 3px;
-}
-
-#news-message.ui.message {
-	min-height: unset;
-}
-
-#welcome {
-	padding: 50px;
-	margin: 5px;
-	background-color: lightgray;
-	border-radius: 3px;
-	border: 1px solid black;
-	font-size: 24px;
-	line-height: 34px;
-}
-
-#welcome > p {
-	text-indent: 15px;
-}
-
-#welcome > h2 {
-	text-decoration: underline;
 }
 
 #header.header-shrink {
@@ -84,7 +62,7 @@
 	margin: 0px;
 	display: grid;
 	grid-gap: 5px;
-	grid-template-columns: repeat(auto-fill, 320px);
+	grid-template-columns: repeat(auto-fill, 310px);
 	grid-auto-rows: 40px;
 }
 
