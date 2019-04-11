@@ -1190,4 +1190,12 @@
 	"image": "/assets/raids/BattleRaid_Akasha.png",
 	"category": "Impossible Tier 3",
 	"element": "Light"
+},
+{
+	"english": "Lvl 250 Lucilius",
+	"japanese": "Lv250 ルシファー",
+	"room": "lvl250lucilius",
+	"image": "/assets/Lucilius_Impossible.png",
+	"category": "Impossible Tier 3",
+	"element": "Light"
 }]
